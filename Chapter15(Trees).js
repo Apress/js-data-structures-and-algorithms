@@ -224,8 +224,8 @@ AVLTree.prototype.rotateLL = function() {
     this.right.right = rightBefore;
     this.right.value = valueBefore;
 
-    this.right.getDepthFromChildren();
-    this.getDepthFromChildren();
+    this.right.setDepthBasedOnChildren();
+    this.setDepthBasedOnChildren();
 };
 AVLTree.prototype.rotateRR = function() {
     // the right side is too long => rotate from the right (_not_ rightwards)
@@ -239,8 +239,8 @@ AVLTree.prototype.rotateRR = function() {
     this.left.left = leftBefore;
     this.left.value = valueBefore;
 
-    this.left.updateInNewLocation();
-    this.updateInNewLocation();
+    this.left.setDepthBasedOnChildren();
+    this.setDepthBasedOnChildren();
 }
 AVLTree.prototype.balance = function() {
     var ldepth = this.left == null ? 0 : this.left.depth;
@@ -322,7 +322,7 @@ AVLTree.prototype.remove = function(value) {
                 return root;
             }
         }
-        root.updateInNewLocation(); // ONLY DIFFERENCE from the BST one
+        root.setDepthBasedOnChildren(); // ONLY DIFFERENCE from the BST one
         return root;
     }
 
