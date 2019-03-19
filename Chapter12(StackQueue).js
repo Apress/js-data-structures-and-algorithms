@@ -46,9 +46,9 @@ console.log(stack1); // {array: []}
 
 
 function stackAccessNthTopNode(stack, n) {
-    var bufferArray = stack.getBuffer();
     if (n <= 0) throw 'error'
-
+    
+    var bufferArray = stack.getBuffer();
     var bufferStack = new Stack(bufferArray);
 
     while (--n !== 0) {
@@ -129,9 +129,9 @@ console.log(queue1); // {array: [3]}
 
 
 function queueAccessNthTopNode(queue, n) {
-    var bufferArray = queue.getBuffer();
     if (n <= 0) throw 'error'
 
+    var bufferArray = queue.getBuffer();
     var bufferQueue = new Queue(bufferArray);
 
     while (--n !== 0) {
