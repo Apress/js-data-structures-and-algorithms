@@ -63,21 +63,14 @@ sll1.remove(12); // linked list is now: 20 -> 1 -> null
 sll1.remove(20); // linked list is now: 1 -> null 
 
 
-DoublyLinkedList.prototype.deleteAtHead = function() {
+SinglyLinkedList.prototype.deleteAtHead = function() {
     var toReturn = null;
 
     if (this.head !== null) {
-        toReturn = this.head.data;
-
-        if (this.tail === this.head) {
-            this.head = null;
-            this.tail = null;
-        } else {
-            this.head = this.head.next;
-            this.head.prev = null;
-        }
+      toReturn = this.head.data;
+      this.head = this.head.next;
+      this.size--;    }
     }
-    this.size--;
     return toReturn;
 }
 var sll1 = new SinglyLinkedList();
