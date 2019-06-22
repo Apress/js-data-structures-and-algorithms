@@ -220,13 +220,13 @@ function medianOfTwoSortedArray(arr1, arr2, pos) {
 
     var evenOffset = pos % 2 == 0 ? 1 : 0,
         offsetMinus = Math.floor(pos / 2) - evenOffset,
-        offsetPlus = Math.floor(pos / 2) + evenOffset;
+        offsetPlus = pos - Math.floor(pos / 2) + evenOffset;
 
 
     if (median1 < median2) {
-        return medianOfTwoSortedArray(arr1.slice(offsetMinus), arr2.slice(offsetMinus), offsetPlus);
+        return medianOfTwoSortedArray(arr1.slice(offsetMinus), arr2.slice(0, -offsetMinus), offsetPlus);
     } else {
-        return medianOfTwoSortedArray(arr2.slice(offsetMinus), arr1.slice(offsetMinus), offsetPlus);
+        return medianOfTwoSortedArray(arr2.slice(offsetMinus), arr1.slice(0, -offsetMinus), offsetPlus);
     }
 }
 
