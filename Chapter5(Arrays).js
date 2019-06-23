@@ -299,7 +299,7 @@ console.log(Matrix(3,3));
 var matrix3by3 = [[1,2,3],[4,5,6],[7,8,9]];
 matrix3by3[0]; // [1,2,3] 
 matrix3by3[1]; // [4,5,6]
-matrix3by3[1]; // [7,8,9]
+matrix3by3[2]; // [7,8,9]
 
 matrix3by3[0][0]; // 1
 matrix3by3[0][1]; // 2
