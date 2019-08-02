@@ -455,8 +455,8 @@ var node3 = {
     }
 }
 
-printKthLevels(node1, 1); // 1
-printKthLevels(node1, 2); // [0,2]
+printKthLevels(node1, 0); // 1
+printKthLevels(node1, 1); // [0,2]
 function isSameTree(root1, root2) {
     if (root1 == null && root2 == null) {
         return true;
