@@ -1,5 +1,6 @@
 # Errata for *Book Title*
 
+### page 130
 On **page 130** [Summary of error]:
  
 Bubble sort had minor **index** issue.
