@@ -2,6 +2,21 @@
 
 ***
 
+### page 22
+On **page 22**
+
+**Before**:
+```latex
+$(-1)^{\text{sign}} \times 2^{e-127} \times \left(1 + \sum_{i=1}^{23} b_{52-i} 2^{-i} \right)$
+```
+
+**Corrected**
+```latex
+$(-1)^{\text{sign}} \times 2^{e-1023} \times \left(1 + \sum_{i=1}^{52} b_{52-i} 2^{-i} \right)$
+```
+
+***
+
 ### page 65
 On **page 65** [Summary of error]:
 
