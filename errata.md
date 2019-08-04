@@ -19,7 +19,7 @@ if (median1 < median2) {
 }
 ```
 
-**After**:
+**Corrected**:
 ```javascript
 var evenOffset = pos % 2 == 0 ? 1 : 0,
     offsetMinus = Math.floor(pos / 2) - evenOffset,
@@ -45,7 +45,7 @@ Details of error here. Highlight key pieces in **bold**.
 var matrix3by3 = [[1,2,3],[4,5,6],[7,8,9]];
 matrix3by3[0]; // [1,2,3] 
 matrix3by3[1]; // [4,5,6]
-matrix3by3[2]; // [7,8,9]
+matrix3by3[1]; // [7,8,9]
 ```
 
 **After**:
@@ -79,7 +79,7 @@ function bubbleSort(array) {
 }
 ```
 
-**After**:
+**Corrected**:
 ```javascript
 function bubbleSort(array) {
     for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
@@ -122,7 +122,7 @@ DoublyLinkedList.prototype.deleteAtHead = function() {
 }
 ```
 
-**After**:
+**Corrected**:
 ```javascript
 SinglyLinkedList.prototype.deleteAtHead = function() {
     var toReturn = null;
