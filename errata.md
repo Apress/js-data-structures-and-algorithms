@@ -2,7 +2,7 @@
 
 ***
 
-#### page 65
+### page 65
 On **page 65** [Summary of error]:
 
 **Before**:
@@ -35,7 +35,7 @@ if (median1 < median2) {
 
 ***
 
-#### page 70
+### page 70
 On **page 70** [Summary of error]:
  
 Details of error here. Highlight key pieces in **bold**.
@@ -58,7 +58,7 @@ matrix3by3[2]; // [7,8,9]
 
 ***
 
-#### page 130
+### page 130
 On **page 130** [Summary of error]:
  
 Bubble sort had minor **index** issue.
@@ -97,7 +97,7 @@ function bubbleSort(array) {
 
 ***
 
-#### page 183
+### page 183
 
 On **page 183** [Summary of error]:
 
