@@ -4,8 +4,8 @@ On **page 130** [Summary of error]:
  
 Bubble sort had minor **index** issue.
 
-Before:
-```
+**Before**:
+```javascript
 function bubbleSort(array) {
     for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
         for (var j = 0; j <= i; j++) {
@@ -20,8 +20,8 @@ function bubbleSort(array) {
 }
 ```
 
-After:
-```
+**After**:
+```javascript
 function bubbleSort(array) {
     for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
         for (var j = 0; j < arrayLength - 1 - i; j++) {
@@ -42,16 +42,16 @@ On **page 70** [Summary of error]:
  
 Details of error here. Highlight key pieces in **bold**.
 
-Before:
-```
+**Before**:
+```javascript
 var matrix3by3 = [[1,2,3],[4,5,6],[7,8,9]];
 matrix3by3[0]; // [1,2,3] 
 matrix3by3[1]; // [4,5,6]
 matrix3by3[2]; // [7,8,9]
 ```
 
-After:
-```
+**After**:
+```javascript
 var matrix3by3 = [[1,2,3],[4,5,6],[7,8,9]];
 matrix3by3[0]; // [1,2,3] 
 matrix3by3[1]; // [4,5,6]
@@ -62,8 +62,8 @@ matrix3by3[2]; // [7,8,9]
 
 On **page 65** [Summary of error]:
 
-Before:
-```
+**Before**:
+```javascript
 var evenOffset = pos % 2 == 0 ? 1 : 0,
     offsetMinus = Math.floor(pos / 2) - evenOffset,
     offsetPlus = Math.floor(pos / 2) + evenOffset;
@@ -76,9 +76,8 @@ if (median1 < median2) {
 }
 ```
 
-
-After:
-```
+**After**:
+```javascript
 var evenOffset = pos % 2 == 0 ? 1 : 0,
     offsetMinus = Math.floor(pos / 2) - evenOffset,
     offsetPlus = pos - Math.floor(pos / 2) + evenOffset;
@@ -96,8 +95,8 @@ if (median1 < median2) {
 
 On **page 183** [Summary of error]:
 
-Before:
-```
+**Before**:
+```javascript
 DoublyLinkedList.prototype.deleteAtHead = function() {
     var toReturn = null;
 
@@ -117,8 +116,8 @@ DoublyLinkedList.prototype.deleteAtHead = function() {
 }
 ```
 
-After:
-```
+**After**:
+```javascript
 SinglyLinkedList.prototype.deleteAtHead = function() {
     var toReturn = null;
 
