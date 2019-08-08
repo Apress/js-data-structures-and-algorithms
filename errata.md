@@ -15,6 +15,16 @@ $(-1)^{\text{sign}} \times 2^{e-127} \times \left(1 + \sum_{i=1}^{23} b_{52-i} 2
 $(-1)^{\text{sign}} \times 2^{e-1023} \times \left(1 + \sum_{i=1}^{52} b_{52-i} 2^{-i} \right)$
 ```
 
+
+*** 
+
+### page 23
+On **page 23**
+
+**Before**: 0.00110011
+
+**Corrected**: 0.000110011
+
 ***
 
 ### page 65
