@@ -83,6 +83,20 @@ matrix3by3[2]; // [7,8,9]
 
 ***
 
+### Chapter 3
+
+**Before**:
+```
+-Infinity < Number.MIN_SAFE_INTEGER < Number.MIN_VALUE < 0 < Number.MAX_SAFE_INTEGER < Number.MAX_VALUE < Infinity.
+```
+
+**After**:
+```
+-Infinity < Number.MIN_SAFE_INTEGER < 0 < Number.MIN_VALUE  < Number.MAX_SAFE_INTEGER < Number.MAX_VALUE < Infinity.
+```
+
+***
+
 ### page 130
 On **page 130** [Summary of error]:
  
