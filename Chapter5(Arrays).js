@@ -5,7 +5,7 @@ array1  = [1,2,3,4];
 array1.push(5); // array1 = [1,2,3,4,5]
 array1.push(7); // array1 = [1,2,3,4,5,7]
 array1.push(2); // array1 = [1,2,3,4,5,7,2]
-array1
+console.log(array1);
 
 array1  = [1,2,3,4];
 array1.pop(); //returns 4, array1 = [1,2,3]
@@ -16,8 +16,8 @@ array1.shift(); //returns 1, array1 = [2,3,4]
 array1.shift(); //returns 2, array1 = [3,4]
 
 array1  = [1,2,3,4];
-array1[0]; //returns 1
-array1[1]; //returns 2
+console.log(array1[0]); //returns 1
+console.log(array1[1]); //returns 2
 
 for ( var i=0; i<array1.length; i++ ) {
     // insert code here
@@ -45,15 +45,15 @@ for ( ; ;) {
 var array1 = ['all','cows','are','big'];
 
 for (var index in array1) {
-    console.log(index); 
+    console.log(index);
 }
 
 for (var index in array1) {
-    console.log(array1[index]); 
+    console.log(array1[index]);
 }
 
 for (var element of array1) {
-    console.log(element); 
+    console.log(element);
 }
 
 var array1 = ['all','cows','are','big'];
@@ -78,24 +78,24 @@ array1.slice(); //returns [1,2,3,4], array1 = [1,2,3,4]
 var array1 = [1,2,3,4],
     array2 = array1;
 
-array1 // [1,2,3,4]
-array2 // [1,2,3,4]
+console.log(array1); // [1,2,3,4]
+console.log(array2); // [1,2,3,4]
 
 array2[0] = 5;
 
-array1 // [5,2,3,4]
-array2 // [5,2,3,4]
+console.log(array1); // [5,2,3,4]
+console.log(array2); // [5,2,3,4]
 
 var array1 = [1,2,3,4];
 var array2 = array1.slice();
 
-array1 // [1,2,3,4]
-array2 // [1,2,3,4]
+console.log(array1); // [1,2,3,4]
+console.log(array2); // [1,2,3,4]
 
 array2[0] = 5;
 
-array1 // [1,2,3,4]
-array2 // [5,2,3,4] 
+console.log(array1); // [1,2,3,4]
+console.log(array2); // [5,2,3,4]
 
 var array1 = [1,2,3,4];
 array1.splice(); //returns [], array1 = [1,2,3,4]
@@ -108,7 +108,7 @@ array1.splice(1,2,5,6,7); //returns [2,3],array1 = [1,5,6,7,4]
 array1 = [1,2,3,4];
 array1.splice(1,2,[5,6,7]);  //returns [2,3],  array1 = [1,[5,6,7],4]
 array1 = [1,2,3,4];
-array1.splice(1,2,{'ss':1}); //returns [2,3], array1 = [1,{'ss':1},4]   
+array1.splice(1,2,{'ss':1}); //returns [2,3], array1 = [1,{'ss':1},4]
 
 var array1 = [1,2,3,4];
 array1.concat(); //returns [], array1 = [1,2,3,4]
@@ -297,7 +297,7 @@ function Matrix(rows, columns)  {
 console.log(Matrix(3,3));
 
 var matrix3by3 = [[1,2,3],[4,5,6],[7,8,9]];
-matrix3by3[0]; // [1,2,3] 
+matrix3by3[0]; // [1,2,3]
 matrix3by3[1]; // [4,5,6]
 matrix3by3[2]; // [7,8,9]
 
@@ -366,13 +366,13 @@ function checkColumn ( gameBoardMatrix, columnIndex, letter ) {
 function ticTacToeWinner ( gameBoardMatrix, letter) {
 
     // Check rows
-    var rowWin = checkRow(gameBoardMatrix[0], letter) 
-    || checkRow(gameBoardMatrix[1], letter) 
-    || checkRow(gameBoardMatrix[2], letter);
-    
-    var colWin = checkColumn(gameBoardMatrix, 0, letter) 
-    || checkColumn(gameBoardMatrix, 1, letter) 
-    || checkColumn(gameBoardMatrix, 2, letter);
+    var rowWin = checkRow(gameBoardMatrix[0], letter)
+        || checkRow(gameBoardMatrix[1], letter)
+        || checkRow(gameBoardMatrix[2], letter);
+
+    var colWin = checkColumn(gameBoardMatrix, 0, letter)
+        || checkColumn(gameBoardMatrix, 1, letter)
+        || checkColumn(gameBoardMatrix, 2, letter);
 
     var diagonalWinLeftToRight = (gameBoardMatrix[0][0]==letter && gameBoardMatrix[1][1]==letter && gameBoardMatrix[2][2]==letter);
     var diagonalWinRightToLeft = (gameBoardMatrix[0][2]==letter && gameBoardMatrix[1][1]==letter && gameBoardMatrix[2][0]==letter);
@@ -385,7 +385,7 @@ ticTacToeWinner(board, 'X'); // false
 ticTacToeWinner(board, 'O'); // true
 
 var board =
-`%e%%%%%%%%%\n
+    `%e%%%%%%%%%\n
 %...%.%...%\n
 %.%.%.%.%%%\n
 %.%.......%\n
@@ -401,7 +401,7 @@ function generateColumnArr(arr) {
 var mazeMatrix = rows.map(generateColumnArr);
 
 function findChar(char, mazeMatrix) {
-  var row = mazeMatrix.length,
+    var row = mazeMatrix.length,
         column = mazeMatrix[0].length;
 
     for (var i = 0; i < row; i++) {
@@ -410,7 +410,7 @@ function findChar(char, mazeMatrix) {
                 return [i, j];
             }
         }
-    }  
+    }
 }
 
 function printMatrix(matrix) {
@@ -475,7 +475,7 @@ function rotateMatrix90Left(mat) {
 
     // Consider all squares one by one
     for (var x = 0; x < N / 2; x++) {
-        // Consider elements in group of 4 in 
+        // Consider elements in group of 4 in
         // current square
         for (var y = x; y < N - x - 1; y++) {
             // store current cell in temp variable
