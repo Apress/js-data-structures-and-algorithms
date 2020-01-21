@@ -102,24 +102,28 @@ LCSNaiveWrapper('AGGTAB', 'GXTXAYB'); // 4
 
 
 function longestCommonSequenceLength(str1, str2) {
-    var matrix = Array(str1.length + 1).fill(Array(str2.length + 1).fill(0)),
-        rowLength = str1.length + 1,
-        colLength = str2.length + 1,
-        max = 0;
+	 var rowLength = str1.length,
+         colLength = str2.length;
 
-    for (var row = 1; row < rowLength; row++) {
-        for (var col = 1; col < colLength; col++) {
-            var str1Char = str1.charAt(row - 1),
-                str2Char = str2.charAt(col - 1);
+ 	let matrix = new Array(str1.length + 1);
 
-            if (str1Char == str2Char) {
-                matrix[row][col] = matrix[row - 1][col - 1] + 1;
-                max = Math.max(matrix[row][col], max);
-            }
+    for(let i = 0; i <= str1.length; i++){
+        matrix[i] = new Array(str2.length + 1).fill(0);
+    }
+
+    for (let row = 1; row <= rowLength; row++) {
+        for (let col = 1; col <= colLength; col++) {
+           if ( str1[row-1] === str2[col-1] ) {
+               	 matrix[row][col] = 1 + matrix[row - 1][col - 1];
+           }
+		   else {
+                 matrix[row][col] = Math.max(matrix[row-1][col], matrix[row][col-1]);
+           }
         }
     }
-    return max;
+    return  matrix[rowLength][colLength];
 }
+
 longestCommonSequenceLength('abcd', 'bc');
 
 
