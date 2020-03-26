@@ -19,14 +19,17 @@ console.log(stack1); // {array: []}
 Stack.prototype.peek = function() {
     return this.array[this.array.length - 1];
 }
+
+Stack.prototype.push = function(value) {
+    this.array.push(value);
+}
+
 stack1.push(10);
 console.log(stack1.peek()); // 10
 stack1.push(5);
 console.log(stack1.peek()); // 5
 
-Stack.prototype.push = function(value) {
-    this.array.push(value);
-}
+stack1 = new Stack();
 
 stack1.push(1);
 stack1.push(2);
