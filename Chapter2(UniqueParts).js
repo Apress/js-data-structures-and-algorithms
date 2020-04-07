@@ -109,8 +109,8 @@ o1 === o2 // returns false
 var o1 = {};
 var o2 = o1;
 
-o1 == o2 // returns false
-o1 === o2 // returns false
+o1 == o2 // returns true
+o1 === o2 // returns true
 
 function isEquivalent(a, b) {
     // arrays of property names
