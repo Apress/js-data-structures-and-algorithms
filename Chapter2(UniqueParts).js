@@ -56,7 +56,7 @@ function scope3(print) {
     }
     console.log(insideIf);
 }
-scope2(true); // prints ''
+scope3(true); // prints ''
 
 var is20 = false; // boolean
 typeof is20; // boolean
