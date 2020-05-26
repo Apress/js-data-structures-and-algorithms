@@ -134,6 +134,79 @@ function bubbleSort(array) {
 }
 ```
 
+### Page 158
+
+On **page 158**: Using Quadratic Probing [Summary of error]:
+
+
+**Before**:
+```javascript
+HashTable.prototype.get = function(key) {
+    var hashedIndex = this.hash(key),
+        squareIndex = 1;
+
+    while (this.keys[hashedIndex] != key) {
+        hashedIndex += Math.pow(squareIndex, 2);
+
+        hashedIndex = hashedIndex % this.size;
+        squareIndex++;
+    }
+
+    return this.values[hashedIndex];
+}
+
+
+HashTable.prototype.put = function(key, value) {
+    if (this.limit >= this.size) throw 'hash table is full'
+
+    var hashedIndex = this.hash(key);
+
+    while (this.keys[hashedIndex] != null) {
+        hashedIndex++;
+
+        hashedIndex = hashedIndex % this.size;
+
+    }
+    this.keys[hashedIndex] = key;
+    this.values[hashedIndex] = value;
+    this.limit++;
+}
+```
+
+**After**:
+```javascript
+HashTable.prototype.put = function(key, value) {
+    if (this.limit >= this.size) throw 'hash table is full'
+
+    var hashedIndex = this.hash(key),
+        squareIndex = 1;
+
+    // quadratic probing
+    while (this.keys[hashedIndex % this.size] != null) {
+        hashedIndex += Math.pow(squareIndex, 2);
+        squareIndex++;
+    }
+
+    this.keys[hashedIndex % this.size] = key;
+    this.values[hashedIndex % this.size] = value;
+    this.limit++;
+}
+
+HashTable.prototype.get = function(key) {
+
+    var hashedIndex = this.hash(key),
+        squareIndex = 1;
+
+    while (this.keys[hashedIndex % this.size] != key) {
+        hashedIndex += Math.pow(squareIndex, 2);
+        hashedIndex = hashedIndex % this.size;
+        squareIndex++;
+    }
+    return this.values[hashedIndex % this.size];
+}
+```
+
+
 ***
 
 ### page 183

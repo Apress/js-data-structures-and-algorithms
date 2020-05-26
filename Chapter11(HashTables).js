@@ -68,8 +68,6 @@ exampletable.put(85, "happy");
 exampletable.put(98, "sad");
 
 
-
-
 HashTable.prototype.put = function(key, value) {
     if (this.limit >= this.size) throw 'hash table is full'
 
@@ -77,30 +75,27 @@ HashTable.prototype.put = function(key, value) {
         squareIndex = 1;
 
     // quadratic probing
-    while (this.keys[hashedIndex] != null) {
+    while (this.keys[hashedIndex % this.size] != null) {
         hashedIndex += Math.pow(squareIndex, 2);
-
-        hashedIndex
         squareIndex++;
     }
 
-    this.keys[hashedIndex] = key;
-    this.values[hashedIndex] = value;
+    this.keys[hashedIndex % this.size] = key;
+    this.values[hashedIndex % this.size] = value;
     this.limit++;
 }
 
 HashTable.prototype.get = function(key) {
+    
     var hashedIndex = this.hash(key),
         squareIndex = 1;
 
-    while (this.keys[hashedIndex] != key) {
+    while (this.keys[hashedIndex % this.size] != key) {
         hashedIndex += Math.pow(squareIndex, 2);
-
         hashedIndex = hashedIndex % this.size;
         squareIndex++;
     }
-
-    return this.values[hashedIndex];
+    return this.values[hashedIndex % this.size];
 }
 
 
