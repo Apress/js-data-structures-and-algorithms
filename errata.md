@@ -254,3 +254,9 @@ SinglyLinkedList.prototype.deleteAtHead = function() {
 On **AVL Trees** [Summary of error]:
 
 `getDepthFromChildren()` and `updateInNewLocation()` needs to be renamed to: `setDepthBasedOnChildren()`
+
+
+General Implementation fixed in:
+https://github.com/Apress/js-data-structures-and-algorithms/commit/2b01327bc9a98c35dfe5f904caad2d05e8398d2c
+
+
