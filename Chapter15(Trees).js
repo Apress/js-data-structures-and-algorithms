@@ -198,10 +198,9 @@ function AVLTree(value) {
     this.value = value;
     this.depth = 1;
 }
+
 AVLTree.prototype.setDepthBasedOnChildren = function() {
     if (this.node == null) {
-        this.depth = 0;
-    } else {
         this.depth = 1;
     }
 
@@ -270,6 +269,7 @@ AVLTree.prototype.balance = function() {
         this.rotateRR();
     }
 }
+
 AVLTree.prototype.insert = function(value) {
     var childInserted = false;
     if (value == this.value) {
@@ -295,6 +295,7 @@ AVLTree.prototype.insert = function(value) {
     if (childInserted == true) this.setDepthBasedOnChildren();
     return childInserted;
 }
+
 AVLTree.prototype.remove = function(value) {
     return deleteRecursively(this, value);
 
