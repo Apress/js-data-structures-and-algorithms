@@ -260,3 +260,12 @@ General Implementation fixed in:
 https://github.com/Apress/js-data-structures-and-algorithms/commit/2b01327bc9a98c35dfe5f904caad2d05e8398d2c
 
 
+
+***
+
+## Dynamic Programming, page 327
+On **Knapsack DP Approach** [Summary of error]:
+
+https://github.com/Apress/js-data-structures-and-algorithms/commit/2b60ed2ec45e23ea2f7aec6376f540826772f6e9
+
+
