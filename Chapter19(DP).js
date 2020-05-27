@@ -67,13 +67,14 @@ function knapsackDP(index, weights, values, target, matrixDP) {
     } else if (weights[index] > target) {
         result = knapsackDP(index - 1, weights, values, target, matrixDP);
     } else {
-        var current = knapsackDP(index - 1, weights, values, target),
-            currentPlusOther = values[index] + knapsackDP(index - 1, weights, values, target - weights[index]);
+        var current = knapsackDP(index - 1, weights, values, target, matrixDP),
+            currentPlusOther = values[index] + knapsackDP(index - 1, weights, values, target - weights[index], matrixDP);
         result = Math.max(current, currentPlusOther);
     }
     matrixDP[index + '-' + target] = result
     return result;
 }
+
 knapsackDP(4, weights, values, target, {});
 
 
