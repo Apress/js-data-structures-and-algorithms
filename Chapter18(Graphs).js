@@ -201,7 +201,7 @@ DirectedGraph.prototype.topologicalSortUtil = function(v, visited, stack) {
 };
 
 DirectedGraph.prototype.topologicalSort = function() {
-    var visited = {},
+    var visited = new Set(),
         stack = [];
 
 
