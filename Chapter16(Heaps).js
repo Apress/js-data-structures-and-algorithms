@@ -114,10 +114,15 @@ console.log(mh1.poll()); // 5
 console.log(mh1.poll()); // 8
 console.log(mh1.poll()); // 10
 console.log(mh1.poll()); // 100
+
 function MaxHeap() {
     this.items = [];
 }
 MaxHeap.prototype = Object.create(Heap.prototype); // inherit helpers from heap by copying prototype
+MaxHeap.prototype.add = function(item) {
+    this.items[this.items.length] = item;
+    this.bubbleUp();
+}
 MaxHeap.prototype.poll = function() {
     var item = this.items[0];
     this.items[0] = this.items[this.items.length - 1];
@@ -130,7 +135,7 @@ MaxHeap.prototype.bubbleDown = function() {
     var index = 0;
     while (this.leftChild(index) && (this.leftChild(index) > this.items[index] || this.rightChild(index) > this.items[index])) {
         var biggerIndex = this.leftChildIndex(index);
-        if (this.rightChild(index) && this.rightChild(index) > this.items[bigger\ Index]) {
+        if (this.rightChild(index) && this.rightChild(index) > this.items[biggerIndex]) {
             biggerIndex = this.rightChildrenIndex(index);
         }
         this.swap(biggerIndex, index);
