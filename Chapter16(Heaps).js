@@ -197,7 +197,7 @@ function MedianHeap() {
     this.maxHeap = new MaxHeap();
 }
 
-MedianHeap.prototype.push = function(value) {
+MedianHeap.prototype.add = function(value) {
     if (value > this.median()) {
         this.minHeap.add(value);
     } else {
@@ -206,11 +206,11 @@ MedianHeap.prototype.push = function(value) {
 
     // Re balancing
     if (this.minHeap.size() - this.maxHeap.size() > 1) {
-        this.maxHeap.push(this.minHeap.poll());
+        this.maxHeap.add(this.minHeap.poll());
     }
 
     if (this.maxHeap.size() - this.minHeap.size() > 1) {
-        this.minHeap.push(this.maxHeap.poll());
+        this.minHeap.add(this.maxHeap.poll());
     }
 }
 
@@ -228,13 +228,13 @@ MedianHeap.prototype.median = function() {
 
 var medianH = new MedianHeap();
 
-medianH.push(12);
+medianH.add(12);
 console.log(medianH.median()); // 12
-medianH.push(2);
+medianH.add(2);
 console.log(medianH.median()); // 7 ( because 12 + 2 = 14; 14/2 = 7)
-medianH.push(23);
+medianH.add(23);
 console.log(medianH.median()); // 12
-medianH.push(13);
+medianH.add(13);
 console.log(medianH.median()); // 12.5
 
 
@@ -260,7 +260,7 @@ var array1 = [12, 3, 13, 4, 2, 40, 23];
 function getKthBiggestElement(array, k) {
     var maxH = new MaxHeap();
     for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
-        maxH.push(array[i]);
+        maxH.add(array[i]);
     }
     for (var i = 1; i < k; i++) {
         maxH.pop();
