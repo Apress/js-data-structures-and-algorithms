@@ -83,7 +83,21 @@ matrix3by3[2]; // [7,8,9]
 
 ***
 
-### Chapter 3
+### Chapter 4: Floating Numeric Characters
+
+**Before**:
+```
+reg.test("12"); // false
+```
+
+**After**:
+```
+reg.test("12"); // true
+```
+
+***
+
+### Chapter 4
 
 **Before**:
 ```
@@ -96,6 +110,7 @@ matrix3by3[2]; // [7,8,9]
 ```
 
 ***
+
 
 ### page 130
 On **page 130** [Summary of error]:
