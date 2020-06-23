@@ -174,7 +174,8 @@ function arraySlice(array, beginIndex, endIndex) {
     }
 
     // If only beginning index is found, set endIndex to size
-    endIndex = array.length;
+    if (!endIndex)  
+        endIndex = array.length;
 
     var partArray = [];
 

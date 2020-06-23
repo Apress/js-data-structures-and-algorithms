@@ -80,7 +80,7 @@ reg.test("123a"); // false
 reg.test("11a22"); // false
 
 var reg = /^[0-9]*.[0-9]*[1-9]+$/;
-reg.test("12"); // false
+reg.test("12"); // true
 reg.test("12.2"); // true
 reg.test("12.2.3"); // false
 
