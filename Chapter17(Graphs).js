@@ -15,7 +15,7 @@ var graph1 = new UndirectedGraph();
 graph1.addVertex(1);
 graph1.addVertex(2);
 graph1.addEdge(1, 2, 1);
-graph1.edges; // 1: {2: 0},  2: {1: 0}
+graph1.edges; // 1: {2: 1},  2: {1: 1}
 graph1.addVertex(3);
 graph1.addVertex(4);
 graph1.addVertex(5);
