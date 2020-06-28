@@ -1,3 +1,7 @@
+function BinaryTree() {
+    this._root = null;
+}
+
 BinaryTree.prototype.traverseInOrder = function() {
     traverseInOrderHelper(this._root);
 
