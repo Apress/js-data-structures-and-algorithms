@@ -5,12 +5,20 @@ location = location; // refreshes the page
 localStorage.getItem("testKey"); // prints "testValue"
 
 
-
+// Start of: Linear Probing -----------------------------------
 function HashTable(size) {
     this.size = size;
     this.keys = this.initArray(size);
     this.values = this.initArray(size);
     this.limit = 0;
+}
+
+HashTable.prototype.initArray = function(size) {
+    var array = [];
+    for (var i = 0; i < size; i++) {
+        array.push(null);
+    }
+    return array;
 }
 
 HashTable.prototype.put = function(key, value) {
@@ -49,14 +57,6 @@ HashTable.prototype.hash = function(key) {
     return key % this.size;
 }
 
-HashTable.prototype.initArray = function(size) {
-    var array = [];
-    for (var i = 0; i < size; i++) {
-        array.push(null);
-    }
-    return array;
-}
-
 var exampletable = new HashTable(13);
 exampletable.put(7, "hi");
 exampletable.put(20, "hello");
@@ -66,8 +66,11 @@ exampletable.put(59, "wow");
 exampletable.put(72, "fourty");
 exampletable.put(85, "happy");
 exampletable.put(98, "sad");
+// End of: Linear Probing ------------------------------------0
 
 
+
+// Start of: Quadratic Probing --------------------------------
 HashTable.prototype.put = function(key, value) {
     if (this.limit >= this.size) throw 'hash table is full'
 
@@ -97,8 +100,10 @@ HashTable.prototype.get = function(key) {
     }
     return this.values[hashedIndex % this.size];
 }
+// End of: Quadratic Probing ----------------------------------
 
 
+// Star of: Double Hashing with Linear Probing ----------------
 HashTable.prototype.put = function(key, value) {
     if (this.limit >= this.size) throw 'hash table is full'
 
@@ -129,7 +134,7 @@ HashTable.prototype.get = function(key) {
 
 HashTable.prototype.hash = function(key) {
     if (!Number.isInteger(key)) throw 'must be int'; // check if int
-    return this.secondHash(key % this.size);
+    return this.secondHash(key);
 }
 
 HashTable.prototype.secondHash = function(hashedKey) {
