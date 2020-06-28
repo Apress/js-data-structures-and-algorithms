@@ -69,10 +69,11 @@ SinglyLinkedList.prototype.deleteAtHead = function() {
     if (this.head !== null) {
       toReturn = this.head.data;
       this.head = this.head.next;
-      this.size--;    }
+      this.size--;    
     }
     return toReturn;
 }
+
 var sll1 = new SinglyLinkedList();
 sll1.insert(1); // linked list is now:  1 -> null
 sll1.insert(12); // linked list is now: 12 -> 1 -> null
@@ -97,7 +98,7 @@ DoublyLinkedList.prototype.isEmpty = function() {
     return this.size == 0;
 }
 
-DoublyLinkedList.prototype.addAtFront = function(value) {
+DoublyLinkedList.prototype.insertAtHead = function(value) {
     if (this.head === null) { //If first node
         this.head = new DoublyLinkedListNode(value);
         this.tail = this.head;

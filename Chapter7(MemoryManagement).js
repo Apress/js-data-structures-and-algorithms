@@ -151,7 +151,7 @@ var two = document.querySelector("#two");getElementById("two");
 function callBackExample () {
     one.removeEventListener("",callBackExample);
 }
-one.addEventListener(‘click’ , function(){
+one.addEventListener('click' , function(){
     two.remove();
     console.log(two); // will print the html even after deletion
 });
