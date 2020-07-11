@@ -3,12 +3,12 @@ function memory(){
     return '';
 }
 var foo = {
-    bar1: memory(), // 5kb
-    bar2: memory() // 5kb
+    bar1: memory(), // 5 kilobytes
+    bar2: memory() // 5 kilobytes
 }
 
 function clickEvent(){
-    alert(foo.bar1[0]);
+    return foo.bar1[0];
 }
 
 // DOM leak:
@@ -21,6 +21,7 @@ one.addEventListener('click', function(){
 
 // fix for above
 var one = document.getElementById("one");
+
 one.addEventListener('click', function(){
     var two = document.getElementById("two");
     two.remove();
@@ -28,14 +29,17 @@ one.addEventListener('click', function(){
 
 // unregister the callback
 var one = document.getElementById("one");
+
 one.addEventListener('click', function(){
     var two = document.getElementById("two");
     two.remove();
 });
+
 one.removeEventListener('click');
 
-var a = "apples"; //global with var
-b = "oranges"; //global without var
+
+var a = "apples"; // global with var
+b = "oranges"; // global without var
 
 console.log(window.a);  // prints "apples"
 console.log(window.b);  // prints "oranges"
@@ -45,27 +49,27 @@ var test = {
 }
 
 function printProp1(test){
-    console.log(test.prop1);
+    return test.prop1;
 }
 
-printProp1(test); //'test'
+printProp1(test); // prints 'test'
 
 var test = {
     prop1: 'test'
 }
 
 function printProp1(prop1){
-    console.log(prop1);
+    return prop1;
 }
 
-printProp1(test.prop1); //'test'
+printProp1(test.prop1); // prints 'test'
 
 var test = {
     prop1: 'test'
 }
-console.log(test.prop1); // 'test'
-delete test.prop1;
-console.log(test.prop1); // _undefined_
+console.log(test.prop1); // prints 'test'
+delete test.prop1; // deletes 'test'
+console.log(test.prop1); // prints 'undefined'
 
 
 
@@ -81,7 +85,7 @@ var exampleObject = {
 }
 
 function printProperty(obj){
-    console.log(obj['prop1']);
+    return obj['prop1'];
 }
 printProperty(exampleObject);
 
@@ -96,15 +100,14 @@ var exampleObject = {
 }
 
 function printProperty(prop){
-    console.log(prop);
+    return prop;
 }
-printProperty(exampleObject['prop1']); 
+printProperty(exampleObject['prop1'])
 
 
 // -- Question 2
-var RED     = 0,
-    GREEN   = 1,
-    BLUE    = 2;
+var RED = 0, GREEN = 1, BLUE = 2;
+
 function redGreenBlueCount(arr) {
     var counter = new Array(3).fill(0);
     for (var i=0; i < arr.length; i++) {
@@ -122,10 +125,8 @@ function redGreenBlueCount(arr) {
 
 
 function redGreenBlueCount(arr) {
-    var RED     = 0,
-        GREEN   = 1,
-        BLUE    = 2,
-        counter = new Array(3).fill(0);
+    var RED = 0, GREEN   = 1,BLUE = 2, counter = new Array(3).fill(0);
+    
     for (var i=0; i < arr.length; i++) {
         var curr = arr[i];
         if (curr == RED) {
@@ -148,13 +149,16 @@ function redGreenBlueCount(arr) {
 // Question:
 var one = document.querySelector("#one");getElementById("one");
 var two = document.querySelector("#two");getElementById("two");
+
 function callBackExample () {
-    one.removeEventListener("",callBackExample);
+    one.removeEventListener("", callBackExample);
 }
-one.addEventListener('click' , function(){
+
+one.addEventListener('click', function(){
     two.remove();
     console.log(two); // will print the html even after deletion
 });
+
 two.addEventListener('click', function(){
     one.remove();
     console.log(one); // will print the html even after deletion
@@ -166,16 +170,16 @@ var two = document.querySelector("#two");
 
 function callbackOne() {
     var two = document.querySelector("#two");
-    if (!two)
-        return;
+    if (!two) return;
+    
     two.remove();
     one.removeEventListener("hover", callbackOne);
 }
 
 function callbackTwo() {
     var one = document.querySelector("#one");
-    if (!one)
-        return;
+    if (!one) return;
+    
     one.remove();
     two.removeEventListener("hover", callbackTwo);
 }
