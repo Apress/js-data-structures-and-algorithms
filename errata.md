@@ -149,6 +149,22 @@ function bubbleSort(array) {
 }
 ```
 
+### Page 138
+
+**Before**:
+```javascript
+quickSelectInPlace(array, 0, array.length - 1, 10); // 7 
+// 7 - because it's the tenth smallest element
+```
+
+**After**:
+```javascript
+quickSelectInPlace(array, 0, array.length - 1, 10); // 8
+// 8 - because it's the tenth smallest element
+```
+
+
+
 ### Page 158
 
 On **page 158**: Using Quadratic Probing [Summary of error]:
