@@ -290,8 +290,8 @@ console.log(sum); // prints 11
 
 function Matrix(rows, columns)  {
     var jaggedarray = new Array(rows);
-    for (var i=0; i < columns; i +=1) {
-        jaggedarray[i]=new Array(rows);
+    for (var i=0; i < rows; i +=1) {
+        jaggedarray[i]=new Array(columns);
     }
     return jaggedarray;
 }
