@@ -490,7 +490,7 @@ function checkIfSubTree(root, subtree) {
     while (queue.length) {
         var temp = queue.shift();
 
-        if (temp.data == subtree.data == isSameTree(temp, subtree)) {
+        if (temp.value == subtree.value && isSameTree(temp, subtree)) {
             return true;
         }
 
