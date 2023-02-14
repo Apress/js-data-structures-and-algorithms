@@ -162,7 +162,7 @@ function findOnlyOnceHelper(arr) {
     return findOnlyOnce(arr, 0, arr.length);
 }
 findOnlyOnceHelper([ 1, 1, 2, 4, 4, 5, 5, 6, 6 ]);
-### 4. Find the minimum element in a sorted and rotated array
+// 4. Find the minimum element in a sorted and rotated array
 function findMinRotated(arr, low, high){
     // This condition is needed to handle the case when array is not
     // rotated at all
