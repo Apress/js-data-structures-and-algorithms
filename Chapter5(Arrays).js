@@ -321,8 +321,8 @@ function spiralPrint(M) {
         btmRow = M.length - 1,
         rightCol = M[0].length - 1;
 
-    while (topRow < btmRow && leftCol < rightCol) {
-        for (var col = 0; col <= rightCol; col++) {
+    while (topRow <= btmRow && leftCol <= rightCol) {
+        for (var col = leftCol; col <= rightCol; col++) {
             console.log(M[topRow][col]);
         }
         topRow++;
@@ -331,13 +331,13 @@ function spiralPrint(M) {
         }
         rightCol--;
         if (topRow <= btmRow) {
-            for (var col = rightCol; col > 0; col--) {
+            for (var col = rightCol; col >= leftCol; col--) {
                 console.log(M[btmRow][col]);
             }
             btmRow--;
         }
         if (leftCol <= rightCol) {
-            for (var row = btmRow; row > topRow; row--) {
+            for (var row = btmRow; row >= topRow; row--) {
                 console.log(M[row][leftCol]);
             }
             leftCol++;
